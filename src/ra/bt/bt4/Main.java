@@ -10,14 +10,13 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập vào 1 chuỗi:");
         String str = scanner.nextLine();
-        String[] arrStr = str.split("");
         List<Integer> integerList = new ArrayList<>();
-        for (int i = 0; i < arrStr.length; i++) {
+        for (int i = 0; i < str.length(); i++) {
             try {
-                int n = Integer.parseInt(arrStr[i]);
+                int n = Integer.parseInt(String.valueOf(str.charAt(i)));
                 integerList.add(n);
             } catch (NumberFormatException e){
-                System.out.printf("%s không phải là số\n",arrStr[i]);
+                System.out.printf("%s không phải là số\n",str.charAt(i));
                 integerList.add(0);
             }
         }
